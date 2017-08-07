@@ -163,3 +163,7 @@ def display_image_predictions(features, labels, predictions):
         axies[image_i][1].set_yticks(ind + margin)
         axies[image_i][1].set_yticklabels(pred_names[::-1])
         axies[image_i][1].set_xticks([0, 0.5, 1.0])
+
+def _aug_batch(arg):
+    aug, features, labels = arg
+    return aug.apply(features), labels
